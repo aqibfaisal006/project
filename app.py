@@ -7,7 +7,7 @@ current_id = 1
 
 @app.route('/api/health', methods=['GET'])
 def health():
-    return jsonify({"status": "ok"}), 200
+    return jsonify({"status": "ok"}), 500
 
 
 @app.route('/students', methods=['GET'])
