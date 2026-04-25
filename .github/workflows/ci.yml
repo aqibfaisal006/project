@@ -40,14 +40,13 @@ jobs:
 
 
   report:
-    runs-on: ubuntu-latest
     needs: build-docker
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Print summary
-        run: echo "Pipeline complete for commit ${{ github.sha }}"
-
-      - name: Use secret safely
-        run: echo "Secret loaded successfully"
+      - name: Print Pipeline Summary
+        run: echo 'Pipeline complete for commit: ${{ github.sha }}'
+        
+      - name: Test Secret Loading
         env:
-          MY_SECRET: ${{ secrets.LAB_SECRET }}
+          THE_SECRET: ${{ secrets.LAB_SECRET }}
+        run: echo 'Secret loaded successfully'

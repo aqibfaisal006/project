@@ -1,0 +1,1 @@
+If the test job fails, the pipeline halts immediately and the build-docker job is skipped. This is important because it acts as an automated safety gate. It ensures that buggy or failing code is never packaged into a Docker container and deployed to production, protecting the live application from breaking.
